@@ -1,0 +1,1 @@
+from cv_downloader.cv_downloader import CvDownloader
