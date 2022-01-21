@@ -11,15 +11,15 @@ from pdfminer.pdfpage import PDFPage
 from win32com import client
 
 interviews = pd.read_csv(
-    "https://docs.google.com/spreadsheets/d/1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q/\
-export?format=csv&id=1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q&gid=420698778",
+    'https://docs.google.com/spreadsheets/d/1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q/'
+    'export?format=csv&id=1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q&gid=420698778',
     header=None,
     usecols=[6, 11],
     dtype={6: str, 11: str})  # 6 - номера, 11 - комментарий
 
 applicants = pd.read_csv(
     "https://docs.google.com/spreadsheets/d/1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q/\
-export?format=csv&id=1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q&gid=545937916",
+    export?format=csv&id=1GbK5YrhV7uyT3wIapgMTU-NW6GHimMA6lG8IuDB0b6Q&gid=545937916",
     header=None,
     usecols=[5, 10],
     dtype={5: str, 10: str})  # 5 - номера, 10 - комментарий
@@ -69,7 +69,7 @@ def read_pdf(resume):
     text = fake_file_handle.getvalue()
     converter.close()
     fake_file_handle.close()
-    numbers_in_resume = re.findall(pattern, re.sub(r'\D', '', text))
+    numbers_in_resume = re.findall(pattern, re.sub(r'\D', '', text)
     print(resume, numbers_in_resume)
     if not numbers_in_resume:
         cant_extract_number.append(resume)
